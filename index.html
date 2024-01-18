@@ -6,24 +6,289 @@
     <title>SMPIP Baitul Maal</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-        * {font-family: Rubik, Arial, Helvetica, sans-serif;}
+        * {font-family: Rubik, Arial, Helvetica, sans-serif; transition: all 0.5s ease-out;}
     </style>
     <link rel="stylesheet" href="src/output.css">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const all = document.querySelectorAll('*');
+            all.forEach(element => {
+                if (element.hasAttribute('alt')) {
+                    element.setAttribute('title', element.getAttribute('alt'))
+                };
+            });
+        });
+    </script>
 </head>
-<body class="m-0 p-0 h-full w-full bg-gray-900 text-gray-50 transition-all duration-500 ease-out">
+<body class="m-0 p-0 h-full w-full bg-gray-900 text-gray-50">
     <header class="absolute"></header>
     <section id="home" class="w-full h-screen">
         <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/p/AF1QipM9QFsWoiXrabad3n4DaexNy714revFhhgtyACE=s1360-w1360-h1020" alt="Foto bangunan SMPIP Baitul Maal oleh Menit Bermanfaat">
-        <div class="absolute bg-gray-900/70 h-full w-full top-0 flex flex-col justify-center items-center gap-4 p-4">
+        <div class="absolute bg-gray-900/70 h-full w-full top-0 left-0 flex flex-col justify-center items-center gap-4 p-4">
             <div class="flex flex-col gap-4 items-center sm:flex-row sm:items-end">
-                <img class="h-32 sm:h-48" src="src/img/logo.png" alt="Logo SMPIP Baitul Maal">
+                <img class="h-32 sm:h-48 hover:scale-110" src="src/img/logo.png" alt="Logo SMPIP Baitul Maal">
                 <h1 class="font-bold flex flex-col items-left gap-2 text-center sm:text-left"><span class="font-extrabold text-6xl sm:text-8xl">SMPIP</span><span class="text-4xl sm:text-6xl">Baitul Maal</span></h1>
             </div>
             <p class="font-medium text-xl sm:text-2xl text-center">Sekolah Menengah Pertama Islam Plus Baitul Maal</p>
             <a href="https://maps.google.com/maps/contrib/116107343395176830314" target="_blank" class="absolute inline left-0 bottom-0 cursor-default font-light text-sm sm:text-base no-underline px-2 py-1">Foto oleh <span class="cursor-pointer underline font-normal"><img class="h-4 sm:h-5 inline" src="https://lh3.googleusercontent.com/a-/ALV-UjWqT3AUnmVnQnGKljInItxXKNtAx2kGdbqptTbTCvg55Js=w90-h90-p-rp-mo-ba2-br100" alt="Foto profil Menit Bermanfaat di Google Maps beserta badgenya"> Menit Bermanfaat</span> di <span class="cursor-pointer underline font-normal">Google Maps</span></a>
         </div>
     </section>
-    <section id="about" class="w-full"></section>
+    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+        <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Visi & Misi</h2>
+        <div class="h-full w-full flex flex-col sm:flex-row gap-8">
+            <div class="h-full w-full flex flex-col gap-8">
+                <h3 class="font-bold text-center text-2xl sm:text-3xl w-full">Visi</h3>
+                <p class="font-normal text-justify text-xl sm:text-2xl">
+                    Terwujudnya peserta didik yang sholeh, cerdas, mandiri dan bertanggungjawab yang peduli lingkungan serta berwawasan global dengan menerapkan teknologi informasi
+                </p>
+                <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+            </div>
+            <div class="h-full w-full flex flex-col gap-8">
+                <h3 class="font-bold text-center text-2xl sm:text-3xl w-full">Misi</h3>
+                <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
+                    <div class="flex flex-row items-start gap-4">
+                        <p>1.</p>
+                        <p>Membangun pendidikan menengah pertama yang berstandar manajemen mutu dan profesional serta pelayanan prima dengan menerapkan teknologi informasi.</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>2.</p>
+                        <p>Mewujudkan pendidikan ramah anak dan membentuk kepribadian muslim yang cinta belajar, peduli lingkungan serta berwawasan global.</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>3.</p>
+                        <p>Menyiapkan sarana dan prasarana yang aman dan kondusif</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>4.</p>
+                        <p>Mengembangkan kerjasama dengan lingkungan dan komunitas pendidikan</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>5.</p>
+                        <p>Menumbuhkan kesadaran peserta didik sebagai makhluk sosial dalam tatanan kemasyarakatan dan aktif memelihara dan melestarikan lingkungan</p>
+                    </div>
+                </div>
+                <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+            </div>
+        </div>
+    </section>
+    <section id="landasan-pemikiran" class="w-full flex flex-col sm:flex-row items-start gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+        <div class="sm:min-h-[calc(100vh-9rem)] w-full flex flex-col gap-8 justify-center sm:sticky sm:top-20">
+            <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Landasan Pemikiran</h2>
+            <p class="font-normal text-justify text-xl sm:text-2xl">
+                Dalam dunia pendidikan saat ini sudah semakin berkembang. Berbagai metode pembelajaran diterapkan. Didalamnya membuat masyarakat khususnya orangtua dan guru dituntut untuk memilih sikap peduli terhadap kondisi pendidikan anak sebagai generasi penerus mereka. Atas dasar ini, perhatian atas tumbuh dan berkembangnya peran pendidikan di tengah masyarakat khususnya anak sebagai generasi yang diharapkan mempunyai ilmu dan akhlak yang baik tentunya mutlak diperlukan. Karena dengan perhatian terhadap dunia pendidikan anak, memilih metode pembelajaran, mengarahkan dan membimbing anak tentu akan membantu anak dalam mengembangkan kemampuan dan kreatifitas yang tentunya diikuti dengan akhlak yang mulia.<br><br>
+                Pembelajaran yang diberikan dengan cara yang tepat, akan memberikan hasil yang optimal. Atas dasar pemikiran tersebut, SMPIP Baitul Maal hadir ditengah-tengah perkembangan dunia pendidikan yang semakin berkembang untuk menciptakan kondisi belajar yang menyenangkan dengan mengoptimalkan kemampuan anak dan mengarahkan mereka.<br><br>
+                Dengan penerapan pembelajaran active learning, fun learning, dan IQRO (Inqruiry, Question, Repeat, & Action) maka menjadi anak pembelajar yang berdaya guna dan berakhlak mulia.
+            </p>
+            <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+        </div>
+        <div class="sm:min-h-[calc(100vh-9rem)] w-full sm:w-[50%] flex flex-col justify-center sm:sticky sm:top-20 gap-0">
+            <div class="gap-0.5 flex flex-col justify-center items-center border-2 border-white rounded-xl overflow-hidden bg-white">
+                <img class="w-full" src="https://www.ppiabaitulmaal.sch.id/images/banner_unit/siswabaris.jpg" alt="Foto kegiatan upacara Senin">
+                <img class="w-full" src="https://www.ppiabaitulmaal.sch.id/images/ppia/smp/smp.JPG" alt="Foto kegiatan tilawah bersama">
+                <img class="w-full" src="https://www.ppiabaitulmaal.sch.id/images/ppia/smp/pemilu/DSC_1988.JPG" alt="Foto kegiatan LDKS">
+            </div>
+        </div>
+    </section>
+    <section id="kurikulum-dan-sistem-pembelajaran" class="w-full flex flex-col sm:flex-row-reverse items-start gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+        <div class="sm:min-h-[calc(100vh-9rem)] w-full flex flex-col gap-8 justify-center sm:sticky sm:top-20">
+            <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Kurikulum dan Sistem Pembelajaran</h2>
+            <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
+                <div class="flex flex-row items-start gap-4">
+                    <p>1.</p>
+                    <p>Belajar dengan cara yang tepat dan sesuai, akan memudahkan anak dalam menyerap suatu informasi, demikian pula konsep pembelajaran yang digunakan oleh kami, yaitu : Active Learning, Fun Learning serta IQRO dengan tetap mengintregasikan kurikulum nasional dipadukan dengan Kurikulum Mandiri/Lokal yang menjadi kurikulum unggulan.</p>
+                </div>
+                <div class="flex flex-row items-start gap-4">
+                    <p>2.</p>
+                    <p>System pembelajaran mengarah kepada Active Learning dan Learning by Doing, yaitu pelajaran yang mengacu kepada aplikasi setiap mata pelajaran.</p>
+                </div>
+                <div class="flex flex-row items-start gap-4">
+                    <p>3.</p>
+                    <p>Menggunakan system Full Day School dengan pembelajaran yang menyenangkan (Fun).</p>
+                </div>
+                <div class="flex flex-row items-start gap-4">
+                    <p>4.</p>
+                    <p>Membiasakan siswa untuk mengenal Al-Qur’an setiap hari (Every day with Qur’an).</p>
+                </div>
+            </div>
+            <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+        </div>
+        <div class="sm:min-h-[calc(100vh-9rem)] w-full sm:w-[50%] flex flex-col justify-center sm:sticky sm:top-20 gap-0">
+            <div class="gap-0.5 flex flex-col justify-center items-center border-2 border-white rounded-xl overflow-hidden bg-white">
+                <img class="w-full" src="https://www.ppiabaitulmaal.sch.id/images/ppia/smp/oktober/mabit_smp.jpeg" alt="Foto kegiatan podcast dalam rangkaian kegiatan mabit">
+                <img class="w-full" src="https://www.ppiabaitulmaal.sch.id/images/ppia/smp/IMG_20220930_091427.jpg" alt="Foto kegiatan games di sela-sela kegiatan LDK OSIS">
+            </div>
+        </div>
+    </section>
+    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+        <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Mata Pelajaran</h2>
+        <div class="h-full w-full flex flex-col sm:flex-row gap-8">
+            <div class="h-full w-full flex flex-col gap-8">
+                <h3 class="font-bold text-center text-2xl sm:text-3xl w-full">Kurikulum Diknas</h3>
+                <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Pendidikan Kewarganegaraan</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Agama</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Sains (Kimia, Biologi, Fisika)</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Sosial (Sejarah, Geografi, Ekonomi)</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Matematika</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Bahasa Indonesia</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Olahraga</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Teknologi Informasi dan Komunikasi</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Art (Kesenian)</p>
+                    </div>
+                </div>
+                <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+            </div>
+            <div class="h-full w-full flex flex-col gap-8">
+                <h3 class="font-bold text-center text-2xl sm:text-3xl w-full">Kurikulum Lokal</h3>
+                <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Bahasa Arab</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Tahsinul Qur'an</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Tahfidzul Qur'an</p>
+                    </div>
+                </div>
+                <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+            </div>
+        </div>
+    </section>
+    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+        <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Program Penunjang & Kegiatan Lain</h2>
+        <div class="h-full w-full flex flex-col sm:flex-row gap-8">
+            <div class="h-full w-full flex flex-col gap-8">
+                <h3 class="font-bold text-center text-2xl sm:text-3xl w-full">Program Penunjang</h3>
+                <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Kepanduan</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Futsal</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Basket</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Beladiri</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Panahan</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Menari</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Marawis</p>
+                    </div>
+                </div>
+                <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+            </div>
+            <div class="h-full w-full flex flex-col gap-8">
+                <h3 class="font-bold text-center text-2xl sm:text-3xl w-full">Kegiatan Lain</h3>
+                <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Shalat Dhuha</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Tilawah Al-Qur’an</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Al Ma’tsurat</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Mentoring</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Life Skill</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Student Camp</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Renang</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Mabit (Mabit Bina Iman dan Takwa)</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Usbu’ Ruhiy (Peningkatan Ruhiyah)</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Annual Project (Proyek tahunan hasil karya anak)</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Karyawisata/kunjungan</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Shadaqoh atau Rabu Berbagi</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Home Visit</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Home Stay</p>
+                    </div>
+                    <div class="flex flex-row items-start gap-4">
+                        <p>•</p>
+                        <p>Outbond</p>
+                    </div>                    
+                </div>
+                <p class="font-normal text-justify text-xl sm:text-2xl"><br></p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
