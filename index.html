@@ -1,40 +1,72 @@
 <!DOCTYPE html>
-<html class="m-0 p-0">
+<html class="m-0 p-0 scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMPIP Baitul Maal</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-        * {font-family: Rubik, Arial, Helvetica, sans-serif; transition: all 0.5s ease-out;}
+        * {font-family: Rubik, Arial, Helvetica, sans-serif; transition: all 0.5s ease-out; scroll-behavior: smooth;}
     </style>
     <link rel="stylesheet" href="src/output.css">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const all = document.querySelectorAll('*');
+            const all = document.querySelectorAll('*'),
+            hyperlinks = document.querySelectorAll('a');
+            document.getElementById
             all.forEach(element => {
                 if (element.hasAttribute('alt')) {
                     element.setAttribute('title', element.getAttribute('alt'))
                 };
             });
+            hyperlinks.forEach(hyperlink => {
+                if (hyperlink.getAttribute('href')[0] == '#') {
+                    hyperlink.onclick = function() {
+                        document.getElementById(hyperlink.getAttribute('href').slice(1)).scrollIntoView();
+                        return false;
+                    };
+                } else {
+                    hyperlink.setAttribute('target', '_blank')
+                };
+            });
         });
     </script>
 </head>
-<body class="m-0 p-0 h-full w-full bg-gray-900 text-gray-50">
-    <header class="absolute"></header>
+<body class="m-0 p-0 h-full w-full bg-gray-900 text-gray-50 scroll-smooth">
+    <header class="fixed top-0 left-0 w-full h-16 bg-gray-900/70 text-white backdrop-blur-sm z-40 flex flex-row justify-between items-center gap-4 p-0 px-2 sm:px-4 md:px-8 lg:px-14 xl:px-22 2xl:px-32">
+        <div class="flex flex-row justify-normal items-center gap-4 h-full p-0 cursor-pointer">
+            <img class="h-10 hover:scale-110" src="src/img/logo.png" alt="Logo SMPIP Baitul Maal">
+            <h1 class="font-bold 2xl:inline text-2xl hidden">SMPIP Baitul Maal</h1>
+        </div>
+        <div id="hamborgir" class="xl:hidden cursor-pointer" onclick="document.querySelector('nav').classList.toggle('hidden');document.querySelector('nav').classList.toggle('flex');">
+            <svg class="fill-current h-14 w-14" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+            </svg>
+        </div>
+        <nav class="hidden xl:flex xl:flex-row justify-normal xl:items-center xl:gap-4 xl:h-full xl:rounded-none xl:p-0 absolute p-2 xl:relative flex-col items-end xl:right-auto xl:top-auto right-2 sm:right-4 md:right-8 lg:right-14 top-16 gap-2 xl:bg-transparent bg-gray-900/70 rounded-b-lg">
+            <a href="#home" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Home</a>
+            <a href="#visi-dan-misi" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Visi & Misi</a>
+            <a href="#landasan-pemikiran" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Landasan Pemikiran</a>
+            <a href="#kurikulum-dan-sistem-pembelajaran" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Kurikulum</a>
+            <a href="#kurikulum-dan-sistem-pembelajaran" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Sistem Pembelajaran</a>
+            <a href="#mata-pelajaran" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Mata Pelajaran</a>
+            <a href="#program-penunjang-dan-kegiatan-lain" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Program Penunjang</a>
+            <a href="#program-penunjang-dan-kegiatan-lain" class="cursor-pointer font-medium w-full xl:w-auto xl:font-normal text-right xl:text-center rounded-md text-lg xl:text-base">Kegiatan Lain</a>
+        </nav>
+    </header>
     <section id="home" class="w-full h-screen">
-        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/p/AF1QipM9QFsWoiXrabad3n4DaexNy714revFhhgtyACE=s1360-w1360-h1020" alt="Foto bangunan SMPIP Baitul Maal oleh Menit Bermanfaat">
+        <img class="w-full h-full object-cover" src="https://www.ppiabaitulmaal.sch.id/images/banner_unit/siswabaris.jpg" alt="Foto kegiatan upacara Senin">
         <div class="absolute bg-gray-900/70 h-full w-full top-0 left-0 flex flex-col justify-center items-center gap-4 p-4">
             <div class="flex flex-col gap-4 items-center sm:flex-row sm:items-end">
                 <img class="h-32 sm:h-48 hover:scale-110" src="src/img/logo.png" alt="Logo SMPIP Baitul Maal">
                 <h1 class="font-bold flex flex-col items-left gap-2 text-center sm:text-left"><span class="font-extrabold text-6xl sm:text-8xl">SMPIP</span><span class="text-4xl sm:text-6xl">Baitul Maal</span></h1>
             </div>
             <p class="font-medium text-xl sm:text-2xl text-center">Sekolah Menengah Pertama Islam Plus Baitul Maal</p>
-            <a href="https://maps.google.com/maps/contrib/116107343395176830314" target="_blank" class="absolute inline left-0 bottom-0 cursor-default font-light text-sm sm:text-base no-underline px-2 py-1">Foto oleh <span class="cursor-pointer underline font-normal"><img class="h-4 sm:h-5 inline" src="https://lh3.googleusercontent.com/a-/ALV-UjWqT3AUnmVnQnGKljInItxXKNtAx2kGdbqptTbTCvg55Js=w90-h90-p-rp-mo-ba2-br100" alt="Foto profil Menit Bermanfaat di Google Maps beserta badgenya"> Menit Bermanfaat</span> di <span class="cursor-pointer underline font-normal">Google Maps</span></a>
+            <a href="https://www.ppiabaitulmaal.sch.id/" class="absolute inline left-0 bottom-0 cursor-default font-light text-sm sm:text-base no-underline px-2 py-1">Foto oleh <span class="cursor-pointer underline font-normal"><img class="h-4 sm:h-5 inline" src="https://www.ppiabaitulmaal.sch.id/templates/jsn_dona_pro/images/logo.png" alt="PPIA Baitul Maal"> PPIA Baitul Maal</span></a>
         </div>
     </section>
-    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <section id="visi-dan-misi" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-14 xl:px-22 2xl:px-32">
         <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Visi & Misi</h2>
         <div class="h-full w-full flex flex-col sm:flex-row gap-8">
             <div class="h-full w-full flex flex-col gap-8">
@@ -72,7 +104,7 @@
             </div>
         </div>
     </section>
-    <section id="landasan-pemikiran" class="w-full flex flex-col sm:flex-row items-start gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <section id="landasan-pemikiran" class="w-full flex flex-col sm:flex-row items-start gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-14 xl:px-22 2xl:px-32">
         <div class="sm:min-h-[calc(100vh-9rem)] w-full flex flex-col gap-8 justify-center sm:sticky sm:top-20">
             <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Landasan Pemikiran</h2>
             <p class="font-normal text-justify text-xl sm:text-2xl">
@@ -90,7 +122,7 @@
             </div>
         </div>
     </section>
-    <section id="kurikulum-dan-sistem-pembelajaran" class="w-full flex flex-col sm:flex-row-reverse items-start gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <section id="kurikulum-dan-sistem-pembelajaran" class="w-full flex flex-col sm:flex-row-reverse items-start gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-14 xl:px-22 2xl:px-32">
         <div class="sm:min-h-[calc(100vh-9rem)] w-full flex flex-col gap-8 justify-center sm:sticky sm:top-20">
             <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Kurikulum dan Sistem Pembelajaran</h2>
             <div class="w-full font-normal text-justify text-xl sm:text-2xl flex flex-col gap-7 sm:gap-8">
@@ -120,7 +152,7 @@
             </div>
         </div>
     </section>
-    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-14 xl:px-22 2xl:px-32">
         <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Mata Pelajaran</h2>
         <div class="h-full w-full flex flex-col sm:flex-row gap-8">
             <div class="h-full w-full flex flex-col gap-8">
@@ -185,7 +217,7 @@
             </div>
         </div>
     </section>
-    <section id="mata-pelajaran" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <section id="program-penunjang-dan-kegiatan-lain" class="w-full flex flex-col items-center gap-8 sm:gap-4 md:gap-8 py-16 px-2 sm:px-4 md:px-8 lg:px-14 xl:px-22 2xl:px-32">
         <h2 class="font-bold text-center text-3xl sm:text-4xl w-full">Program Penunjang & Kegiatan Lain</h2>
         <div class="h-full w-full flex flex-col sm:flex-row gap-8">
             <div class="h-full w-full flex flex-col gap-8">
